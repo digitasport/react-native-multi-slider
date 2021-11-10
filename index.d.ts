@@ -91,6 +91,8 @@ export interface MultiSliderProps {
     markerOffsetY?: number;
     minMarkerOverlapDistance?: number;
     minMarkerOverlapStepDistance?: number;
+    maxMarkerOverlapDistance?: number;
+    maxMarkerOverlapStepDistance?: number;
     imageBackgroundSource?: string;
     enableLabel?: boolean;
     vertical?: boolean;
