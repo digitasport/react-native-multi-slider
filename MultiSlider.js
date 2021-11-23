@@ -549,7 +549,7 @@ export default class MultiSlider extends React.Component {
 
     const markerContainerOne = {
       top: markerOffsetY - 24,
-      left: trackOneLength - markerOffsetX,
+      left: trackOneLength - markerOffsetX + 10,
     };
 
     const markerContainerTwo = {
@@ -583,7 +583,7 @@ export default class MultiSlider extends React.Component {
               trackTwoStyle,
               { width: trackTwoLength + 9.5 },
             ]}
-            {...(twoMarkers ? this._panResponderBetween.panHandlers : {})}
+            // {...(twoMarkers ? this._panResponderBetween.panHandlers : {})}
           />
           {twoMarkers && (
             <View
@@ -608,6 +608,7 @@ export default class MultiSlider extends React.Component {
               style={[styles.touch, touchStyle]}
               ref={component => (this._markerOne = component)}
               {...this._panResponderOne.panHandlers}
+              onTouchStart={()=>console.log("onTouchStart")}
             >
               {isMarkersSeparated === false ? (
                 <Marker
@@ -749,7 +750,7 @@ const styles = StyleSheet.create({
   },
   markerContainer: {
     position: 'absolute',
-    width: 12.5,
+    width: 50,
     height: 40,
     backgroundColor: 'transparent',
     justifyContent: 'center',
