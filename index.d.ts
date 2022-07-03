@@ -38,9 +38,9 @@ export interface LabelProps {
 export interface MultiSliderProps {
     values?: number[];
 
-    onValuesChange?: (values: number[]) => void;
+    onValuesChange?: (values: number[], isShifting?: boolean) => void;
     onValuesChangeStart?: () => void;
-    onValuesChangeFinish?: (values: number[]) => void;
+    onValuesChangeFinish?: (values: number[], isShifting?: boolean) => void;
 
     sliderLength?: number;
     touchDimensions?: {
@@ -96,6 +96,10 @@ export interface MultiSliderProps {
     imageBackgroundSource?: string;
     enableLabel?: boolean;
     vertical?: boolean;
+    customBubble?: React.ComponentType;
+
+    onTouchStart?: () => void;
+    onTouchEnd?: () => void;
 }
 
 export default class MultiSlider extends React.Component<MultiSliderProps> {}
